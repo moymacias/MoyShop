@@ -1,12 +1,18 @@
-import { Pressable, Text } from 'react-native'
+import { Image, Pressable, Text, View, useWindowDimensions } from 'react-native'
+import React, { useEffect } from 'react'
 
 import { Card } from '../../../../components'
-import React from 'react'
 import styles from './CategoryItem.style'
 
-const CategoryItem = ({ category }) => {
+const CategoryItem = ({ category, setCategorySelected }) => {
+  const { height, width } = useWindowDimensions()
+
+  useEffect(() => {
+    console.log(height, width)
+  }, [])
+
   return (
-    <Pressable onPress={() => console.log(`esta es la categoria ${category}`)}>
+    <Pressable onPress={() => setCategorySelected(category)}>
       <Card style={styles.cardContainer}>
         <Text style={styles.text}>{category}</Text>
       </Card>
