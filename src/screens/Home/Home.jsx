@@ -1,4 +1,4 @@
-import { FlatList, SafeAreaView, View } from 'react-native'
+import { FlatList, SafeAreaView, StatusBar, View } from 'react-native'
 
 import { CategoryItem } from './components'
 import { Header } from '../../components'
@@ -9,6 +9,7 @@ import styles from './Home.style'
 const Home = ({ navigation }) => {
   return (
     <SafeAreaView style={styles.container}>
+      <StatusBar animated={true} barStyle={'dark-content'} />
       <Header title={'Categories'} />
       <View style={styles.listContainer}>
         <FlatList

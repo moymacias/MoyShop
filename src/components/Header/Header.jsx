@@ -1,11 +1,11 @@
-import { Button, Text, View } from 'react-native'
+import { Text, View } from 'react-native'
 
 import React from 'react'
 import styles from './Header.style'
 
-const Header = ({ title, action }) => {
+const Header = ({ title }) => {
   return (
-    <View style={styles.container}>
+    <View>
       <Text style={styles.text}>{title}</Text>
     </View>
   )

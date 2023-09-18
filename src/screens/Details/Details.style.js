@@ -5,14 +5,16 @@ export default styles = StyleSheet.create({
     flex: 1,
     backgroundColor: '#FFFFFF',
   },
-  image: {
+  imageContainer: {
     height: '50%',
-    width: '90%',
+    width: '100%',
+  },
+  image: {
+    height: '100%',
   },
   title: {
     fontSize: 30,
-    marginVertical: 15,
-    fontFamily: 'PoppinsThinItalic',
+    fontWeight: 'bold',
   },
   price: {
     fontSize: 20,

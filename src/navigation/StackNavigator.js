@@ -1,7 +1,5 @@
-import { Button, View } from 'react-native'
 import { Details, Home, Products } from '../screens'
 
-import { Header } from '../components'
 import { NavigationContainer } from '@react-navigation/native'
 import { createNativeStackNavigator } from '@react-navigation/native-stack'
 
