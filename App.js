@@ -1,3 +1,5 @@
+import BottomTabNavigator from './src/navigation/BottomTabNavigator'
+import { NavigationContainer } from '@react-navigation/native'
 import StackNavigator from './src/navigation/StackNavigator'
 import fonts from './src/global/fonts'
 import { useFonts } from 'expo-font'
@@ -9,5 +11,9 @@ export default function App() {
     return null
   }
 
-  return <StackNavigator />
+  return (
+    <NavigationContainer>
+      <BottomTabNavigator />
+    </NavigationContainer>
+  )
 }

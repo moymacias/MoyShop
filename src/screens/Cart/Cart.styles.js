@@ -4,9 +4,6 @@ import { colors } from '../../constants/colors'
 export default styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: colors.secondary,
-  },
-  listContainer: {
-    paddingHorizontal: 15,
+    backgroundColor: colors.primary,
   },
 })
