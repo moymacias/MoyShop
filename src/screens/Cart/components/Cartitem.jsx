@@ -1,4 +1,4 @@
-import { Pressable, Text, View } from 'react-native'
+import { Image, Pressable, Text, View } from 'react-native'
 
 import Feather from '@expo/vector-icons/Feather'
 import React from 'react'
@@ -7,6 +7,14 @@ import styles from './CartItem.styles'
 const Cartitem = () => {
   return (
     <View style={styles.container}>
+      <View>
+        <Image
+          style={styles.image}
+          source={{
+            uri: 'https://reactnative.dev/img/tiny_logo.png',
+          }}
+        />
+      </View>
       <View>
         <Text style={styles.name}>Nombre</Text>
       </View>

@@ -10,14 +10,14 @@ const Cart = () => {
 
   return (
     <View style={styles.container}>
-      <View>
+      <View style={styles.listContainer}>
         <FlatList
           data={dataCart}
           keyExtractor={item => item.id}
           renderItem={renderItem}
         />
       </View>
-      <View>
+      <View style={styles.buttonContainer}>
         <Pressable>
           <Text>Confirm</Text>
           <View>

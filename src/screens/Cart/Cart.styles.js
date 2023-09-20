@@ -4,6 +4,12 @@ import { colors } from '../../constants/colors'
 export default styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: colors.grey,
+    backgroundColor: colors.white,
+  },
+  listContainer: {
+    flex: 4,
+  },
+  buttonContainer: {
+    flex: 1,
   },
 })

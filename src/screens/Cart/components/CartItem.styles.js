@@ -3,13 +3,17 @@ import { colors } from '../../../constants/colors'
 
 export default styles = StyleSheet.create({
   container: {
-    flex: 1,
+    margin: 15,
     padding: 8,
-    borderBottomWidth: 1,
-    borderBottomColor: colors.tertiary,
+    borderRadius: 20,
+    backgroundColor: colors.grey,
   },
   name: {
     fontSize: 18,
+  },
+  image: {
+    width: 50,
+    height: 50,
   },
   details: {
     flex: 1,
