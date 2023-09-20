@@ -14,7 +14,7 @@ export default styles = StyleSheet.create({
     fontSize: 20,
     borderWidth: 1,
     borderRadius: 8,
-    borderColor: colors.primary,
-    backgroundColor: colors.primary,
+    borderColor: colors.grey,
+    backgroundColor: colors.grey,
   },
 })

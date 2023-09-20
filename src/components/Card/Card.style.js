@@ -3,7 +3,7 @@ import { colors } from '../../constants/colors'
 
 export default styles = StyleSheet.create({
   container: {
-    backgroundColor: colors.secondary,
+    backgroundColor: colors.white,
     shadowColor: '#000',
     shadowOffset: { height: 5, width: 3 },
     elevation: 10,

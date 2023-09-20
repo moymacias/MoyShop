@@ -12,7 +12,7 @@ const Details = ({ route }) => {
         <Image
           style={styles.image}
           source={{ uri: product.images[0] }}
-          resizeMode="coveer"
+          resizeMode="cover"
         />
       </View>
       <Text style={styles.title}>{product.title}</Text>

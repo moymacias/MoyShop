@@ -7,6 +7,11 @@ const Orders = () => {
   return (
     <View styles={styles.container}>
       <Text>Orders</Text>
+      <Text>Orders</Text>
+      <Text>Orders</Text>
+      <Text>Orders</Text>
+      <Text>Orders</Text>
+      <Text>Orders</Text>
     </View>
   )
 }

@@ -1,8 +1,9 @@
+import { StyleSheet, View } from 'react-native'
+
 import CartNavigator from './CartNavigator'
 import Feather from '@expo/vector-icons/Feather'
 import OrdersNavigator from './OrdersNavigator'
 import StackNavigator from './StackNavigator'
-import { StyleSheet } from 'react-native'
 import { colors } from '../constants/colors'
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'
 
@@ -23,11 +24,9 @@ function BottomTabNavigator() {
         component={StackNavigator}
         options={{
           tabBarIcon: ({ focused }) => (
-            <Feather
-              name="shopping-bag"
-              size={24}
-              color={focused ? colors.quaternary : '#fff'}
-            />
+            <View style={focused ? styles.iconContainer : null}>
+              <Feather name="shopping-bag" size={24} color={colors.white} />
+            </View>
           ),
         }}
       />
@@ -36,11 +35,9 @@ function BottomTabNavigator() {
         component={CartNavigator}
         options={{
           tabBarIcon: ({ focused }) => (
-            <Feather
-              name="shopping-cart"
-              size={24}
-              color={focused ? colors.quaternary : '#fff'}
-            />
+            <View style={focused ? styles.iconContainer : null}>
+              <Feather name="shopping-cart" size={24} color={colors.white} />
+            </View>
           ),
         }}
       />
@@ -49,11 +46,9 @@ function BottomTabNavigator() {
         component={OrdersNavigator}
         options={{
           tabBarIcon: ({ focused }) => (
-            <Feather
-              name="list"
-              size={24}
-              color={focused ? colors.quaternary : '#fff'}
-            />
+            <View style={focused ? styles.iconContainer : null}>
+              <Feather name="list" size={24} color={colors.white} />
+            </View>
           ),
         }}
       />
@@ -65,8 +60,16 @@ export default BottomTabNavigator
 
 const styles = StyleSheet.create({
   tabBar: {
-    backgroundColor: colors.tertiary,
+    backgroundColor: colors.primary,
     borderTopRightRadius: 25,
     borderTopLeftRadius: 25,
+    paddingTop: 5,
+  },
+  iconContainer: {
+    backgroundColor: colors.secondary,
+    borderRadius: 20,
+    padding: 8,
+    justifyContent: 'center',
+    alignItems: 'center',
   },
 })

@@ -4,7 +4,7 @@ import { colors } from '../../constants/colors'
 export default styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: colors.secondary,
+    backgroundColor: colors.white,
   },
   listContainer: {
     flex: 1,
@@ -16,7 +16,7 @@ export default styles = StyleSheet.create({
   },
   productContainer: {
     width: '47%',
-    backgroundColor: colors.primary,
+    backgroundColor: colors.grey,
     marginBottom: 20,
     alignItems: 'flex-start',
     paddingVertical: 15,

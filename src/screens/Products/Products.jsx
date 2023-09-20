@@ -6,9 +6,9 @@ import {
   TouchableOpacity,
   View,
 } from 'react-native'
-import { Header, SearchInput } from '../../components'
 import React, { useEffect, useState } from 'react'
 
+import { SearchInput } from '../../components'
 import allProducts from '../../data/products'
 import styles from './Products.style'
 
@@ -36,7 +36,6 @@ const Products = ({ navigation, route }) => {
 
   return (
     <SafeAreaView style={styles.container}>
-      {/* <Header title={category} /> */}
       <SearchInput onSearch={setKeyword} />
       <View style={styles.listContainer}>
         <FlatList
