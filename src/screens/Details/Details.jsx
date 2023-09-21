@@ -1,6 +1,5 @@
 import { Image, SafeAreaView, Text, View } from 'react-native'
 
-import { Header } from '../../components'
 import React from 'react'
 import styles from './Details.style'
 
