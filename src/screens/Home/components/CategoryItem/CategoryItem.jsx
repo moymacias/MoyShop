@@ -1,6 +1,6 @@
-import { Image, Pressable, Text, View, useWindowDimensions } from 'react-native'
-import React, { useEffect } from 'react'
+import { Pressable, Text, View } from 'react-native'
 
+import React from 'react'
 import styles from './CategoryItem.style'
 
 const CategoryItem = ({ category, navigation }) => {
