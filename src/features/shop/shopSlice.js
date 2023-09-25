@@ -14,8 +14,12 @@ export const shopSlice = createSlice({
   name: 'shop',
   initialState,
   reducers: {
-    setCategorySelected: () => {},
-    setProductIdSelected: () => {},
+    setCategorySelected: (state, action) => {
+      state.categorySelected = action.payload
+    },
+    setProductIdSelected: (state, action) => {
+      state.productIdSelected = action.payload
+    },
   },
 })
 
