@@ -9,7 +9,6 @@ import {
 import React, { useEffect, useState } from 'react'
 
 import { SearchInput } from '../../components'
-import allProducts from '../../data/products'
 import styles from './Products.style'
 import { useGetProductsByCategoryQuery } from '../../services/shopApi'
 import { useSelector } from 'react-redux'
