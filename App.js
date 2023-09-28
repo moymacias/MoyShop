@@ -1,4 +1,4 @@
-import BottomTabNavigator from './src/navigation/BottomTabNavigator'
+import MainNavigator from './src/navigation/MainNavigator'
 import { NavigationContainer } from '@react-navigation/native'
 import { Provider } from 'react-redux'
 import fonts from './src/global/fonts'
@@ -15,7 +15,7 @@ export default function App() {
   return (
     <Provider store={store}>
       <NavigationContainer>
-        <BottomTabNavigator />
+        <MainNavigator />
       </NavigationContainer>
     </Provider>
   )

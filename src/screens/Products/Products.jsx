@@ -18,14 +18,14 @@ const Products = ({ navigation }) => {
   const [keyword, setKeyword] = useState('')
   const { data, isLoading } = useGetProductsByCategoryQuery(category)
 
-  useEffect(() => {
-    console.log(data)
+  /* useEffect(() => {
+    //(data)
     if (data) {
       const productsFiltered = data.filter(product =>
         product.title.includes(keyword)
       )
     }
-  }, [])
+  }, []) */
 
   return (
     <SafeAreaView style={styles.container}>

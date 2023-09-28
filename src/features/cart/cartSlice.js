@@ -3,7 +3,7 @@ import { createSlice } from '@reduxjs/toolkit'
 const initialState = {
   user: 'userLogged',
   updatedAt: Date.now().toLocaleString(),
-  total: 0,
+  total: 50,
   items: [],
 }
 
@@ -23,28 +23,30 @@ export const cartSlice = createSlice({
           }
           return item
         })
-        const total = itemsUpdated.reduce(
+        const newtotal = itemsUpdated.reduce(
           (acc, current) => (acc += current.price * current.quantity),
           0
         )
-        console.log('este es el tota', total)
-        state = {
+        console.log('este es el tota', newtotal)
+        return (state = {
           ...state,
           items: itemsUpdated,
-          total,
+          total: 10,
           updatedAt: new Date().toLocaleString(),
-        }
+        })
       } else {
         state.items.push(action.payload)
-        const total = state.items.reduce(
+        const new2total = state.items.reduce(
           (acc, current) => (acc += current.price * current.quantity),
           0
         )
-        state = {
+
+        console.log('este es el total 2', new2total)
+        return (state = {
           ...state,
-          total,
+          total: 20,
           updatedAt: new Date().toLocaleString(),
-        }
+        })
       }
     },
     removeItem: (state, action) => {},
