@@ -8,15 +8,12 @@ import { setCameraImage } from '../../features/auth/authSlice'
 import styles from './Profile.styles'
 import { usePostProfileImageMutation } from '../../services/shopApi'
 
-const Profile = () => {
+const Profile = ({ navigation }) => {
   const image = useSelector(state => state.auth.imageCamera)
   const { localId } = useSelector(state => state.auth)
   const [triggerSaveProfileImage, result] = usePostProfileImageMutation()
   const dispatch = useDispatch()
 
-  useEffect(() => {
-    console.log(image)
-  }, [])
   const verifyCameraPermissions = async () => {
     const { granted } = await ImagePicker.requestCameraPermissionsAsync()
     if (!granted) {
@@ -74,6 +71,12 @@ const Profile = () => {
       </Pressable>
       <Pressable style={styles.cameraButton} onPress={confirmImage}>
         <Text>Confirmar</Text>
+      </Pressable>
+      <Pressable
+        style={{ ...styles.cameraButton, marginTop: 20 }}
+        onPress={() => navigation.navigate('Location')}
+      >
+        <Text>Ir a mi ubiacion</Text>
       </Pressable>
     </View>
   )
