@@ -1,6 +1,7 @@
 import { Pressable, Text, TextInput, View } from 'react-native'
 import React, { useState } from 'react'
 
+import { TextInput as Input } from 'react-native-paper'
 import { setUser } from '../../features/auth/authSlice'
 import styles from './Signup.styles'
 import { useDispatch } from 'react-redux'
@@ -29,6 +30,7 @@ const Signup = ({ navigation }) => {
     <View style={styles.container}>
       <View style={styles.loginContainer}>
         <Text>Sing up to start</Text>
+        {/*  <Input mode="flat" label="Email" style={styles.email} /> */}
         <TextInput
           style={styles.inputEmail}
           value={email}

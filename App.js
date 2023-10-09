@@ -1,5 +1,6 @@
 import MainNavigator from './src/navigation/MainNavigator'
 import { NavigationContainer } from '@react-navigation/native'
+import { PaperProvider } from 'react-native-paper'
 import { Provider } from 'react-redux'
 import fonts from './src/global/fonts'
 import store from './src/store'
@@ -14,9 +15,11 @@ export default function App() {
 
   return (
     <Provider store={store}>
-      <NavigationContainer>
-        <MainNavigator />
-      </NavigationContainer>
+      <PaperProvider>
+        <NavigationContainer>
+          <MainNavigator />
+        </NavigationContainer>
+      </PaperProvider>
     </Provider>
   )
 }

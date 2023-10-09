@@ -2,7 +2,6 @@ import { FlatList, Pressable, Text, View } from 'react-native'
 import React, { useEffect } from 'react'
 
 import CartItem from './components/Cartitem'
-import dataCart from '../../data/dataCart'
 import styles from './Cart.styles'
 import { usePostOrderMutation } from '../../services/shopApi'
 import { useSelector } from 'react-redux'
