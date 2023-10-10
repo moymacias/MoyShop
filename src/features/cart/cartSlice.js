@@ -28,12 +28,12 @@ export const cartSlice = createSlice({
           0
         )
         console.log('este es el tota', newtotal)
-        return (state = {
+        return {
           ...state,
           items: itemsUpdated,
           total: 10,
           updatedAt: new Date().toLocaleString(),
-        })
+        }
       } else {
         state.items.push(action.payload)
         const new2total = state.items.reduce(
@@ -42,11 +42,11 @@ export const cartSlice = createSlice({
         )
 
         console.log('este es el total 2', new2total)
-        return (state = {
+        return {
           ...state,
           total: 20,
           updatedAt: new Date().toLocaleString(),
-        })
+        }
       }
     },
     removeItem: (state, action) => {},

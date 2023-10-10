@@ -1,6 +1,7 @@
 import { Pressable, Text, TextInput, View } from 'react-native'
 import React, { useState } from 'react'
 
+import { insertSession } from '../../db'
 import { setUser } from '../../features/auth/authSlice'
 import styles from './login.styles'
 import { useDispatch } from 'react-redux'
@@ -13,14 +14,21 @@ const Login = ({ navigation }) => {
   const dispatch = useDispatch()
 
   const onSubmit = () => {
-    console.log(email, password)
+    //console.log(email, password)
     triggerLogin({
       email,
       password,
     })
-    console.log(result)
+    //console.log(result)
     if (result.isSuccess) {
-      dispatch(setUser(result))
+      dispatch(setUser(result.data))
+      insertSession({
+        localId: result.data.localId,
+        email: result.data.email,
+        token: result.data.idToken,
+      })
+        .then(result => console.log(result))
+        .catch(error => console.log(error.message))
     }
   }
 

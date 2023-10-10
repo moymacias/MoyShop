@@ -11,10 +11,6 @@ const Cart = () => {
   const total = useSelector(state => state.cart)
   const [triggerPost, result] = usePostOrderMutation()
 
-  useEffect(() => {
-    console.log(total)
-  }, [])
-
   const renderItem = ({ item }) => <CartItem item={item} />
 
   const confirmCart = () => {
