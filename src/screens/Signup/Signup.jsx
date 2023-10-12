@@ -1,7 +1,6 @@
 import { Pressable, Text, TextInput, View } from 'react-native'
 import React, { useState } from 'react'
 
-import { TextInput as Input } from 'react-native-paper'
 import { setUser } from '../../features/auth/authSlice'
 import styles from './Signup.styles'
 import { useDispatch } from 'react-redux'
@@ -11,26 +10,27 @@ const Signup = ({ navigation }) => {
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
   const [confirmPass, setConfirmPass] = useState('')
-  const [triggerSignup, result] = useSignUpMutation()
+  const [triggerSignup] = useSignUpMutation()
   const dispatch = useDispatch()
 
   const onSubmit = () => {
-    console.log(email, password, confirmPass)
+    console.log('Login button')
     triggerSignup({
       email,
       password,
     })
-    console.log(result)
-    if (result.isSuccess) {
-      dispatch(setUser(result.data))
-    }
+      .unwrap()
+      .then(result => {
+        console.log(result)
+        dispatch(setUser(result))
+      })
+      .catch(err => console.log(err))
   }
 
   return (
     <View style={styles.container}>
       <View style={styles.loginContainer}>
         <Text>Sing up to start</Text>
-        {/*  <Input mode="flat" label="Email" style={styles.email} /> */}
         <TextInput
           style={styles.inputEmail}
           value={email}

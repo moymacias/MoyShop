@@ -16,16 +16,20 @@ import { useSelector } from 'react-redux'
 const Products = ({ navigation }) => {
   const category = useSelector(state => state.shop.categorySelected)
   const [keyword, setKeyword] = useState('')
+  const [products, setProducts] = useState([])
   const { data, isLoading } = useGetProductsByCategoryQuery(category)
 
-  /* useEffect(() => {
-    //(data)
-    if (data) {
-      const productsFiltered = data.filter(product =>
+  useEffect(() => {
+    console.log(data, isLoading)
+    if (!isLoading) {
+      const dataArr = Object.values(data)
+      setProducts(dataArr)
+      const productsFiltered = dataArr.filter(product =>
         product.title.includes(keyword)
       )
+      setProducts(productsFiltered)
     }
-  }, []) */
+  }, [isLoading, keyword])
 
   return (
     <SafeAreaView style={styles.container}>
@@ -33,7 +37,7 @@ const Products = ({ navigation }) => {
       <View style={styles.listContainer}>
         {!isLoading && (
           <FlatList
-            data={Object.values(data)}
+            data={products}
             numColumns={2}
             columnWrapperStyle={styles.weapperStyle}
             renderItem={({ item }) => (
