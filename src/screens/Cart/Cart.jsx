@@ -8,7 +8,7 @@ import { useSelector } from 'react-redux'
 
 const Cart = () => {
   const cart = useSelector(state => state.cart.items)
-  const total = useSelector(state => state.cart)
+  const total = useSelector(state => state.cart.total)
   const [triggerPost, result] = usePostOrderMutation()
 
   const renderItem = ({ item }) => <CartItem item={item} />

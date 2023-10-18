@@ -34,7 +34,7 @@ const Profile = ({ navigation }) => {
         quality: 0.4,
       })
       if (!result.canceled) {
-        console.log(result.assets)
+        //console.log(result.assets)
         dispatch(
           setCameraImage(`data:image/jpeg;base64,${result.assets[0].base64}`)
         )
@@ -44,7 +44,7 @@ const Profile = ({ navigation }) => {
 
   const confirmImage = () => {
     triggerSaveProfileImage({ image, localId })
-    console.log(result)
+    //(result)
   }
 
   return (

@@ -20,7 +20,7 @@ const Products = ({ navigation }) => {
   const { data, isLoading } = useGetProductsByCategoryQuery(category)
 
   useEffect(() => {
-    console.log(data, isLoading)
+    //(data, isLoading)
     if (!isLoading) {
       const dataArr = Object.values(data)
       setProducts(dataArr)
